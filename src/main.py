@@ -45,6 +45,8 @@ def lista_devolper():
         dados['id'] = posicao
         devolpers.append(dados)
         return jsonify(devolpers[posicao])
+    elif request.method == 'GET':
+        return jsonify(devolpers)
         
 
 
