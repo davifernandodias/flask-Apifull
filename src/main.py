@@ -3,14 +3,17 @@ import json
 app = Flask(__name__)
 
 devolpers = [
-    {'name':'davi',
+    {'id':0
+    ,'name':'davi',
     'hability':['Python','Django']
     },
-    {'name':'Gabriel',
+    {'id':1
+    ,
+    'name':'Gabriel',
     'hability':['Python','Django']
     }
 ]
-
+# devolve um devolper pelo ID, too alter and delete a devolper
 @app.route('/dev/<int:id>/',methods=['GET','PUT','DELETE'])
 def devolper(id):
 
@@ -32,6 +35,17 @@ def devolper(id):
     elif request.method == 'DELETE':
         devolpers.pop(id)
         return jsonify({'status':'sucesso','mensagem':'Registro Excluido'})
+
+# Lista all devolper and add new devolper
+@app.route('/dev/',methods=['POST','GET'])
+def lista_devolper():
+    if request.method == 'POST':
+        dados = json.loads(request.data)
+        posicao = len(devolpers)
+        dados['id'] = posicao
+        devolpers.append(dados)
+        return jsonify(devolpers[posicao])
+        
 
 
 
