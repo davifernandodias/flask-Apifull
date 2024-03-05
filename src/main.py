@@ -19,7 +19,7 @@ def devolper(id):
         return jsonify(devolper)
 
     elif request.method == 'PUT':
-        dados = json.loads(request.body)
+        dados = json.loads(request.data)
         devolpers[id] == dados
         return jsonify(dados)
 
