@@ -11,17 +11,27 @@ devolpers = [
     }
 ]
 
-@app.route('/dev/<int:id>/',methods=['GET','PUT'])
+@app.route('/dev/<int:id>/',methods=['GET','PUT','DELETE'])
 def devolper(id):
-    if request.method == 'GET':
-        devolper=devolpers[id]
-        print(devolper)
-        return jsonify(devolper)
 
+    if request.method == 'GET':
+        try:
+            response=devolpers[id]
+        except IndexError:
+            mensagem = f'Devolver of id {id} não existe'
+            response = {'status':'erro','mensagem': mensagem}
+        except Exception:
+            mensagem = 'erro desconhecido. procuro adminstritador da api'
+            response = {'status':'erro','mensagem': mensagem}
+        return jsonify(response)
     elif request.method == 'PUT':
         dados = json.loads(request.data)
         devolpers[id] == dados
         return jsonify(dados)
+
+    elif request.method == 'DELETE':
+        devolpers.pop(id)
+        return jsonify({'status':'sucesso','mensagem':'Registro Excluido'})
 
 
 
