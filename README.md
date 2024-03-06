@@ -25,9 +25,6 @@ This repository contains a Restful API project developed in Flask, with PUT, POS
 
 After installing and running the application, you can use the following routes:
 
-##
-> ## note: localhost may change depending on the execution of this IP, so follow these examples as a basis.
-##
 
 - **GET**: `http://localhost:5000/api//dev/`
 - **PUT**: `http://localhost:5000/api//dev/{id}`
@@ -47,6 +44,6 @@ Feel free to contribute improvements, new features or bug fixes. Just follow the
 4. Push to a branch: `git push origin feature/nova-feature`
 5. Create a pull request
 
-##Contact
+## Contact
 
 If you have any questions or suggestions, please contact us via email: davifernandosousadias18@gmail.com
