@@ -2,7 +2,7 @@
 
 This repository contains a Restful API project developed in Flask, with PUT, POST and DELETE methods implemented.
 
-![swagger-petstore-endpoint-methods](https://github.com/davifernandodias/flask-Apifull/assets/134711641/173baabe-a804-4ba9-86c7-a051c639d611)
+![Screenshot_5](https://github.com/davifernandodias/flask-Apifull/assets/134711641/0f829aec-4052-41bf-8e1e-ce84475b0f2e)
  
 ## Functionalities
 
